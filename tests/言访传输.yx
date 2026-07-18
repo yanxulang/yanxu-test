@@ -1,0 +1,71 @@
+引「../src/言试.yx」为 言试；
+
+引「包:言访」为 言访；
+
+引「标准:字节」为 字节；
+
+引「标准:测试」为 测试；
+
+定 HTTP 为 言试.HTTPMock（）.响应JSON（「GET」，「https://api.example.test/users/1?detail=full」，200，{「编号」：1，「姓名」：「子衿」}）.响应（「GET」，「https://api.example.test/profile」，200，{「content-type」：「application/vnd.yanxu.yanju; version=1; charset=utf-8」}，「据【「等级\」：3】」）.响应（「GET」，「https://api.example.test/empty」，204，{}，空）.一次响应（「POST」，「https://api.example.test/users」，201，{「content-type」：「text/plain; charset=utf-8」}，「created」）；
+
+定 传输 为 HTTP.言访传输（）；
+
+测试.相等（传输.名称（），「言试 HTTPMock」）；
+
+测试.断言（非 传输.能力（）【「真实网络」】，「HTTPMock 不应声明真实网络能力」）；
+
+定 客户 为 言访.客户端（）.基础地址（「https://api.example.test/」）.总超时（2500）.最大响应字节（4096）.禁用重试（）.使用传输（传输）；
+
+定 用户响应 为 客户.取（「users/1」）.查询参数（{「detail」：「full」}）.请求编号（「req-user-1」）.发送（）；
+
+测试.相等（用户响应.状态，200）；
+
+测试.相等（用户响应.解析JSON（）【「姓名」】，「子衿」）；
+
+定 用户请求：典 为 HTTP.各请求（）【0】；
+
+测试.相等（用户请求【「方法」】，「GET」）；
+
+测试.相等（用户请求【「地址」】，「https://api.example.test/users/1?detail=full」）；
+
+测试.断言（（（用户请求【「总超时毫秒」】 大于 0） 且 （用户请求【「总超时毫秒」】 不大于 2500）），「传输应收到剩余总超时」）；
+
+测试.相等（用户请求【「最大响应字节」】，4096）；
+
+测试.相等（用户请求【「请求编号」】，「req-user-1」）；
+
+定 资料 为 客户.取（「profile」）.发送（）.解析言据（）；
+
+测试.相等（资料【「等级」】，3）；
+
+测试.相等（客户.取（「empty」）.发送（）.文字正文（），「」）；
+
+定 创建响应 为 客户.发文（「users」）.文字正文（「request-body」）.发送（）；
+
+测试.相等（创建响应.状态，201）；
+
+测试.相等（创建响应.文字正文（），「created」）；
+
+测试.相等（字节.转文字（HTTP.各请求（）【3】【「正文」】），「request-body」）；
+
+法 重复创建（）：空 则
+    客户.发文（「users」）.文字正文（「again」）.发送（）；
+    归 空；
+终
+
+言试.应当抛错代码（重复创建，「YANSHI_TEST_HTTP_UNMATCHED」）；
+
+定 坏正文HTTP 为 言试.HTTPMock（）.响应（「GET」，「https://api.example.test/bad」，200，{}，123）；
+
+定 坏正文客户 为 言访.客户端（）.禁用重试（）.使用传输（坏正文HTTP.言访传输（））；
+
+法 请求坏正文（）：空 则
+    坏正文客户.取（「https://api.example.test/bad」）.发送（）；
+    归 空；
+终
+
+言试.应当抛错代码（请求坏正文，「YANSHI_TEST_HTTP_BODY」）；
+
+定 旧传输：法 为 HTTP.传输（）；
+
+测试.相等（旧传输（「GET」，「https://api.example.test/users/1?detail=full」，{}，空）【「状态」】，200）；

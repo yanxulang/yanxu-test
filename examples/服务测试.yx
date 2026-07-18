@@ -4,6 +4,8 @@
 
 定 HTTP 为 言试.HTTPMock（）.响应JSON（「GET」，「https://api.example.test/health」，200，{「ok」：真}）；
 
+言试.相等（HTTP.言访传输（）.名称（），「言试 HTTPMock」）；
+
 定 调用 为 言试.Mock（时钟）.返回（「完成」）；
 
 定 结果 为 调用.调用（【「任务-1」】）；

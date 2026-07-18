@@ -1,13 +1,10 @@
 lock_version = 2
-manifest_checksum = "524c385c19f3dbcddd5179529d4dbc82e22241a44957e5db222eded3a6d40538"
+manifest_checksum = "6cb1b96828541b518b8364a5e90057c982e45bf3e07ad9db54d78b9705850c94"
 target = "aarch64-apple-darwin"
 generator = "1.1.12"
 
 [root_dependencies]
-"言库" = "言库@1.0.0#52875d5e81f8-66de54972fc3e521"
-"言据" = "言据@1.2.0#9f376cc5bbdb-def74ca3b32fd504"
-"言时" = "言时@1.0.0#13e245bbcadb-79cfd198d3944422"
-"言访" = "言访@1.0.0#15e56e584494-260517f98c8b7269"
+"言试" = "言试@1.0.0#a5b4b144f221-1fb830cac8386e20"
 
 [root_dev_dependencies]
 
@@ -97,6 +94,25 @@ minimum_yanxu = ">=1.1.11"
 
 [package.exports]
 "默认" = "src/言访.yx"
+
+[[package]]
+id = "言试@1.0.0#a5b4b144f221-1fb830cac8386e20"
+name = "言试"
+version = "1.0.0"
+source = "path:.."
+checksum = "1fb830cac8386e2070970e70f029bb03906c4d5475d4716f63ce79b28ece6b36"
+entry = "src/言试.yx"
+target = "aarch64-apple-darwin"
+minimum_yanxu = ">=1.1.12"
+
+[package.dependencies]
+"言库" = "言库@1.0.0#52875d5e81f8-66de54972fc3e521"
+"言据" = "言据@1.2.0#9f376cc5bbdb-def74ca3b32fd504"
+"言时" = "言时@1.0.0#13e245bbcadb-79cfd198d3944422"
+"言访" = "言访@1.0.0#15e56e584494-260517f98c8b7269"
+
+[package.exports]
+"默认" = "src/言试.yx"
 
 [[package]]
 id = "言韧@1.0.0#283420c6a05e-cd0ac68482a8e8e4"
