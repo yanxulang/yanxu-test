@@ -1,22 +1,22 @@
 lock_version = 2
-manifest_checksum = "ef19eaf7fd06e85beb7b0f9ffa457b1a09f2b907dd241acb961757a36ba75dce"
-target = "x86_64-pc-windows-msvc"
-generator = "1.1.6"
+manifest_checksum = "db2bb68e1437161eb569463bd5ae44af70b50b77537a8127165366cdb5af8e58"
+target = "aarch64-apple-darwin"
+generator = "1.1.12"
 
 [root_dependencies]
-"言时" = "言时@0.1.0#13e245bbcadb-9069dcaf3ec24b76"
+"言时" = "言时@1.0.0#13e245bbcadb-79cfd198d3944422"
 
 [root_dev_dependencies]
 
 [[package]]
-id = "言时@0.1.0#13e245bbcadb-9069dcaf3ec24b76"
+id = "言时@1.0.0#13e245bbcadb-79cfd198d3944422"
 name = "言时"
-version = "0.1.0"
+version = "1.0.0"
 source = "git:https://github.com/yanxulang/yanxu-datetime.git"
-revision = "c36fefc789979a54c1aa1da4e6c35a90cbb3edd4"
-checksum = "9069dcaf3ec24b769bd2a7f935011f471173fbc1894475cb188942eb110dadcb"
+revision = "5e6322bd3ba9301c1db6fe12978fe3fab8bea535"
+checksum = "79cfd198d3944422c4cd058533d29daaa35b5cc6778055205f97e3cd6ebe695f"
 entry = "src/言时.yx"
-target = "x86_64-pc-windows-msvc"
+target = "aarch64-apple-darwin"
 minimum_yanxu = ">=1.1.6"
 
 [package.dependencies]
