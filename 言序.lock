@@ -1,5 +1,5 @@
 lock_version = 2
-manifest_checksum = "068d2e0dc65dd78c59400eb9cf65c6ef853b975606f5f389756281d059018d53"
+manifest_checksum = "524c385c19f3dbcddd5179529d4dbc82e22241a44957e5db222eded3a6d40538"
 target = "aarch64-apple-darwin"
 generator = "1.1.12"
 
