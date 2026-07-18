@@ -10,6 +10,9 @@
 
 [依赖]
 言时 = { git = "https://github.com/yanxulang/yanxu-datetime.git", 修订 = "v1.0.0", 版 = "^1.0" }
+言据 = { git = "https://github.com/yanxulang/yanju.git", 修订 = "v1.2.0", 版 = "^1.2" }
+言访 = { git = "https://github.com/yanxulang/yanxu-request.git", 修订 = "v1.0.0", 版 = "^1.0" }
+言库 = { git = "https://github.com/yanxulang/yanxu-db.git", 修订 = "v1.0.0", 版 = "^1.0" }
 
 [权限]
 文件 = ["."]
