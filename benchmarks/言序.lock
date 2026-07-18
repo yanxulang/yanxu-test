@@ -4,7 +4,7 @@ target = "aarch64-apple-darwin"
 generator = "1.1.12"
 
 [root_dependencies]
-"言试" = "言试@1.0.0#a5b4b144f221-11908fb66e1d5a70"
+"言试" = "言试@1.0.0#a5b4b144f221-9aa5a3ab626c8331"
 
 [root_dev_dependencies]
 
@@ -96,11 +96,11 @@ minimum_yanxu = ">=1.1.11"
 "默认" = "src/言访.yx"
 
 [[package]]
-id = "言试@1.0.0#a5b4b144f221-11908fb66e1d5a70"
+id = "言试@1.0.0#a5b4b144f221-9aa5a3ab626c8331"
 name = "言试"
 version = "1.0.0"
 source = "path:.."
-checksum = "11908fb66e1d5a708b5311986dd3ceeb24d5e0c91e8fe1153a980595851bfa42"
+checksum = "9aa5a3ab626c8331042881ab60ce70c2025e274aac9f3322577add3564d6d66b"
 entry = "src/言试.yx"
 target = "aarch64-apple-darwin"
 minimum_yanxu = ">=1.1.12"
