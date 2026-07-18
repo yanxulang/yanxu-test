@@ -102,8 +102,8 @@ jobs:
           test "$(grep -c '^\[\[package\]\]$' benchmarks/言序.lock)" -eq 7
           test "$(sed -n '/^\[root_dependencies\]/,/^\[root_dev_dependencies\]/p' examples/言序.lock | grep -c ' = ')" -eq 1
           test "$(sed -n '/^\[root_dependencies\]/,/^\[root_dev_dependencies\]/p' benchmarks/言序.lock | grep -c ' = ')" -eq 1
-          grep -Fq "言试 = \"言试@$version#" examples/言序.lock
-          grep -Fq "言试 = \"言试@$version#" benchmarks/言序.lock
+          grep -Fq "\"言试\" = \"言试@$version#" examples/言序.lock
+          grep -Fq "\"言试\" = \"言试@$version#" benchmarks/言序.lock
           grep -Fq 'source = "path:.."' examples/言序.lock
           grep -Fq 'source = "path:.."' benchmarks/言序.lock
           path_checksum() {
